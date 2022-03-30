@@ -29,5 +29,5 @@ const serveAllRequests = function (req, res) {
 };
 const server = http.createServer(serveAllRequests);
 server.listen( process.env.PORT, "localhost", function () {
-  console.log(`Server is running on http://localhost:${process.env.PORT}`);
+  console.log(process.env.MSG_SERVER_START + process.env.PORT);
 });
