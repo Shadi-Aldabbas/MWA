@@ -1,4 +1,3 @@
-// const data = require("../../data/school.json");
 const dbConnection = require("../data/dbconnection");
 
 module.exports.getStudents = (req, res) => {
