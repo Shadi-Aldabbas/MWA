@@ -2,7 +2,10 @@ const express = require("express");
 const router = express.Router();
 const controller = require("../Controller/game.controller");
 
-router.route("/json")
+router.route("/games/:id")
   .get(controller.getAll)
-  .post();
+  
+router.route("/games")
+  .get(controller.getAll)
+  .post(controller.addOne);
 module.exports = router;
