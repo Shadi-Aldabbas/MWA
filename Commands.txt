@@ -1,0 +1,1 @@
+update all => db.Students.updateMany({},{$set: {"course": {"_id":ObjectId(1) ,"name":"WAP"} } });
