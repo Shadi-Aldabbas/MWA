@@ -1,28 +1,18 @@
-[
+{
+  "name": "Jim Carrey",
+  "movies": [
     {
-        "name": "Charles Petzold.",
-        "desc": "Charles Petzold is an American programmer and technical author on Microsoft Windows applications. He is also a Microsoft Most Valuable Professional and was named one of Microsoft's seven Windows Pioneers",
-        "books": [
-            {
-                "_id":1,
-                "name": "3D Programming for Windows",
-                "year": 2008
-            },
-            {
-                "_id":2,
-                "name": "Applications = Code + Markup",
-                "year": 2006
-            },
-            {
-                "_id":3,
-                "name": "Code: The Hidden Language of Computer Hardware and Software",
-                "year": 1999
-            },
-            {
-                "_id":4,
-                "name": "OS/2 Presentation Manager Programming",
-                "year": 1994
-            }
-        ]
+      "name": "Dumb & Dumber.",
+      "year": 2003
+    },
+    {
+      "name": "Yes Man.",
+      "year": 2007
+    },
+    {
+      "name": "The Mask",
+      "year": 1994
     }
-]
+  ],
+  "year": 1981
+}
