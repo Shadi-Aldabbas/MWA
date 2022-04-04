@@ -24,7 +24,8 @@ const getCourse = (req, res) => {
   const courseId = req.params.courseId;
   console.log(courseId);
   Student.findById(studentId).select("course").exec(function (err, student) {
-    res.status(200).json(student.course.id(courseId));
+    console.log("student------------------", student);
+    res.status(200).json(student.course);
   });
 };
 
