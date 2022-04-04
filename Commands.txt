@@ -20,3 +20,6 @@ update all => db.author.updateMany({},{$set: {"books": [
                 "year": 1994
             }
 ] } });
+
+mongoexport -d actorDB -c actors --jsonArray --pretty     
+mongoexport --db actorDB –-collection actors –out output/actorDB.json --jsonArray --pretty

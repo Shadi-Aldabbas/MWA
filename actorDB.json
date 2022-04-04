@@ -1,0 +1,64 @@
+[
+        {
+                "_id": {
+                        "$oid": "62490a89ffb3d7b7abdc10d9"
+                },
+                "name": "Jim Carrey",
+                "movies": [
+                        {
+                                "name": "Dumb & Dumber.",
+                                "year": 2003,
+                                "_id": {
+                                        "$oid": "624a31c602c68f9245033b5f"
+                                }
+                        },
+                        {
+                                "name": "Yes Man.",
+                                "year": 2007,
+                                "_id": {
+                                        "$oid": "624a31c702c68f9245033b62"
+                                }
+                        },
+                        {
+                                "name": "The Mask",
+                                "year": 1994,
+                                "_id": {
+                                        "$oid": "624a31c702c68f9245033b65"
+                                }
+                        }
+                ],
+                "year": 1981,
+                "__v": 9
+        },
+        {
+                "_id": {
+                        "$oid": "624a4b837c17820fb02ccfef"
+                },
+                "name": "Scarlett Johansson's",
+                "year": 1994,
+                "movies": [
+                        {
+                                "name": "Under the Skin.",
+                                "year": 2013,
+                                "_id": {
+                                        "$oid": "624a4b837c17820fb02ccff0"
+                                }
+                        },
+                        {
+                                "name": "Jojo Rabbit.",
+                                "year": 2019,
+                                "_id": {
+                                        "$oid": "624a4b837c17820fb02ccff1"
+                                }
+                        },
+                        {
+                                "name": "Lost in Translation",
+                                "year": 2003,
+                                "_id": {
+                                        "$oid": "624a4b837c17820fb02ccff2"
+                                }
+                        }
+                ],
+                "__v": 0
+        }
+]
