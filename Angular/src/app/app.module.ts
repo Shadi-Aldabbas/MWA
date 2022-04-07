@@ -11,6 +11,8 @@ import { GamesComponent } from './games/games.component';
 import { GameComponent } from './game/game.component';
 import { ErrorPageComponentComponent } from './error-page-component/error-page-component.component';
 import { StarsRatingComponent } from './stars-rating/stars-rating.component';
+import { PerantComponent } from './perant/perant.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { StarsRatingComponent } from './stars-rating/stars-rating.component';
     GamesComponent,
     GameComponent,
     ErrorPageComponentComponent,
-    StarsRatingComponent
+    StarsRatingComponent,
+    PerantComponent,
+    ChildComponent
   ],
   imports: [
     HttpClientModule,

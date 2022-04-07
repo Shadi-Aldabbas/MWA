@@ -7,7 +7,10 @@ const publisherSchema = new mongoose.Schema({
     },
     country: String,
     established: Number, //Not a date since we only have year
-    location: String
+    location: {
+        type:[Number], // longtitude (E/W), latitude (N/S)
+        index: "2dsphere",
+    }
 });
 
 const reviewSchema = new mongoose.Schema({
