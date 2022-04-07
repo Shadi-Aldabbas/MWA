@@ -11,10 +11,18 @@ export class GamesDataService {
   constructor(private http: HttpClient) {}
 
   public getGames(): Observable<Game[]> {
-    return this.http.get<Game[]>(this.baseUrl + '/games');
+    return this.http.get<Game[]>(this.baseUrl + 'games');
   }
   public getGame(id: string): Observable<Game> {
     const url: string = this.baseUrl + 'games/' + id;
     return this.http.get<Game>(url);
+  }
+  public deleteGame(id: string): Observable<any> {
+    console.log("deleteGame", id);
+    const url: string = this.baseUrl + 'games/' + id;
+    let any: any= this.http.delete(url);
+    console.log(any);
+    return any;
+    
   }
 }

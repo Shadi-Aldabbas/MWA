@@ -3,6 +3,7 @@
     <a routerLink="/game/{{game._id}}">
       {{game.title}}
     </a>
-    <button>delete</button>
+    <button (click)="deleteOne(game._id)">delete</button> <!-- do ti using filter -->
+    
   </li>
 </ul>

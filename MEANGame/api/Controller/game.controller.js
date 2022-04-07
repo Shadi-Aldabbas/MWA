@@ -2,7 +2,34 @@ const mongoose = require("mongoose");
 const Game = mongoose.model(process.env.GAME_MODEL);
 
 
+_runGeoQuery = (req, res, offset, count) => {
+  const lng = parseFloat(req.query.lng);
+  const lat = parseFloat(req.query.lat);
+  const distance = parseInt(req.query.distance) || process.env.GEO_SEARCH_MAX_DIST;
+  //Geo JSON Point
+  const point = { type: "Point", coordinates: [lng, lat] };
+  const query = {
+    "publisher.location.coordinates": {
+      $near: {
+        $geometry: point,
+        $maxDistance: parseFloat(process.env.GEO_SEARCH_MAX_DIST, 10),
+        $minDistance: parseFloat(process.env.GEO_SEARCH_MIN_DIST, 10)
+      }
+    }
+  };
+  Game.find(query).skip(offset).limit(count).exec((err, games) => {
+    if (err) {
+      console.log("Geo error ", err);
+      res.status(200).json(err);
+    }
+    else {
+      console.log("Geo results", games);
+      res.status(200).json(games);
+    }
+  });
+}
 const getAll = function (req, res) {
+
   let offset = parseInt(process.env.DEFAULT_FIND_OFFSET, 10);
   let count = parseInt(process.env.DEFAULT_FIND_COUNT, 10);
   const maxCount = parseInt(process.env.DEFAULT_MAX_FIND_LIMIT, 10);
@@ -18,6 +45,10 @@ const getAll = function (req, res) {
   }
   if (count > maxCount) {
     res.status(400).json({ "message": "Cannot exceed count of " + maxCount });
+    return;
+  }
+  if (req.query && req.query.lat && req.query.lng) {
+    _runGeoQuery(req, res, offset, count);
     return;
   }
   Game.find().skip(offset).limit(count).exec(function (err, games) {
@@ -145,6 +176,7 @@ const partialUpdateOne = function (req, res) {
 
 const deleteOne = function (req, res) {
   const gameId = req.params.gameId;
+  console.log("deleting gameId", gameId);
   Game.findByIdAndDelete(gameId).exec(function (err, deletedGame) {
     const response = { status: 204, message: deletedGame };
     if (err) {
