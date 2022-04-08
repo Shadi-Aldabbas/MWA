@@ -5,4 +5,4 @@ Price: {{game.price | currency}}<br />
 Minimum Players: {{game.minPlayers}}<br />
 Maximum Players: {{game.maxPlayers}}<br />
 Minimum Age: {{game.minAge}}<br />
-<button>delete</button>
+<button (click)="delete(game._id)">delete</button> <!-- do ti using filter -->

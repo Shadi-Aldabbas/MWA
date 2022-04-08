@@ -18,11 +18,6 @@ export class GamesDataService {
     return this.http.get<Game>(url);
   }
   public deleteGame(id: string): Observable<any> {
-    console.log("deleteGame", id);
-    const url: string = this.baseUrl + 'games/' + id;
-    let any: any= this.http.delete(url);
-    console.log(any);
-    return any;
-    
+    return this.http.delete(this.baseUrl + 'games/' + id);
   }
 }
