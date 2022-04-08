@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
 import { Game } from './games/games.component';
 
 @Injectable({
@@ -19,5 +19,10 @@ export class GamesDataService {
   }
   public deleteGame(id: string): Observable<any> {
     return this.http.delete(this.baseUrl + 'games/' + id);
+  }
+
+  public createGame(game:Game): Observable<any> {
+    return this.http.post(`${this.baseUrl}games`, game);
+    // return this.http.post(`${this.baseUrl}/create`, game).pipe(catchError(this.errorMgm));
   }
 }

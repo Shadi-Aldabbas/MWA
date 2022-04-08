@@ -7,16 +7,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./navigation.component.css'],
 })
 export class NavigationComponent implements OnInit {
-  constructor(private _router:Router) {}
+  constructor(private _router: Router) {}
   onHome(): void {
     this._router.navigate(['']);
   }
   onGames(): void {
     this._router.navigate(['games']);
-    }
-    Regester(): void {
+  }
+  Regester(): void {
     this._router.navigate(['regester']);
-    }
+  }
+  onAdd(): void {
+    this._router.navigate(['game/add']);
+  }
 
   ngOnInit(): void {}
 }
