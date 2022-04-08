@@ -16,15 +16,14 @@ export class ChildComponent implements OnInit {
   @Output()
   addEvent:EventEmitter<number>=new EventEmitter<number>();
   
-  
   constructor() { }
-
+  
   ngOnInit(): void {
   }
   add():void{
     this.z=this.x + this.y;
     this.addEvent.emit(this.z);
-    // this.z=this.x;
+    this.z=this.x + this.y;
   }
 
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -13,6 +14,7 @@ import { ErrorPageComponentComponent } from './error-page-component/error-page-c
 import { StarsRatingComponent } from './stars-rating/stars-rating.component';
 import { PerantComponent } from './perant/perant.component';
 import { ChildComponent } from './child/child.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +27,12 @@ import { ChildComponent } from './child/child.component';
     ErrorPageComponentComponent,
     StarsRatingComponent,
     PerantComponent,
-    ChildComponent
+    ChildComponent,
+    RegisterComponent
   ],
   imports: [
     HttpClientModule,
+    ReactiveFormsModule,
     BrowserModule,
     RouterModule.forRoot([
       {
@@ -38,6 +42,10 @@ import { ChildComponent } from './child/child.component';
       {
         path: 'games',
         component: GamesComponent,
+      },
+      {
+        path: 'regester',
+        component: RegisterComponent,
       },
       {
       path: "game/:gameId",

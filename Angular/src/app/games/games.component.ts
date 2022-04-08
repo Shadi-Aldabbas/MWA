@@ -11,19 +11,23 @@ export class GamesComponent implements OnInit {
   games: Game[] = [];
   constructor(private gamesService: GamesDataService) { }
   ngOnInit(): void {
+    this.getGames();
+  }
+  getGames(): void {
     this.gamesService.getGames().subscribe({
       next: games => this.games = games,
       error: err => console.log(err),
       complete: () => console.log("got the games")
     });
   }
-
   deleteOne(_id: string): void {
-    console.log(_id);
-    this.gamesService.deleteGame(_id+"s").subscribe({
+    this.gamesService.deleteGame(_id).subscribe({
       next: res => console.log("res", res),
       error: err => console.log(err),
-      complete: () => console.log("deleteOne done")
+      complete: () => {
+        this.games = this.games.filter(x => x._id != _id);
+        this.getGames();
+      }
     })
   }
 }
