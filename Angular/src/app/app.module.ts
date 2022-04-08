@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -15,6 +15,8 @@ import { StarsRatingComponent } from './stars-rating/stars-rating.component';
 import { PerantComponent } from './perant/perant.component';
 import { ChildComponent } from './child/child.component';
 import { RegisterComponent } from './register/register.component';
+import { AddGameComponent } from './add-game/add-game.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,16 +30,27 @@ import { RegisterComponent } from './register/register.component';
     StarsRatingComponent,
     PerantComponent,
     ChildComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddGameComponent,
+    LoginComponent
   ],
   imports: [
     HttpClientModule,
     ReactiveFormsModule,
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot([
       {
         path: '',
         component: HomeComponent,
+      },
+      {
+        path: "game/add",
+        component: AddGameComponent
+      },
+      {
+        path: "game/:gameId",
+        component: GameComponent
       },
       {
         path: 'games',
@@ -48,16 +61,12 @@ import { RegisterComponent } from './register/register.component';
         component: RegisterComponent,
       },
       {
-      path: "game/:gameId",
-      component: GameComponent
-      },
-      {
-      path: "**",
-      component: ErrorPageComponentComponent
+        path: "**",
+        component: ErrorPageComponentComponent
       }
     ]),
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
