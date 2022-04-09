@@ -1,12 +1,13 @@
-<!-- <form [formGroup]="gameForm" (ngSubmit)="add(gameForm)"> -->
-<form>
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
     <div>
         <label>
-            title: <input formControlName="title" placeholder="title" />
+            UserName: <input name="username" placeholder="UserName" [(ngModel)]="credentials.username" />
+            <!-- UserName: <input name="username" placeholder="UserName"> -->
         </label>
         <label>
-            year: <input formControlName="year" placeholder="year" />
+            Password: <input name="password" placeholder="Password" type="Password" [(ngModel)]="credentials.password"/>
+            <!-- Password: <input name="password" placeholder="Password" type="Password"> -->
         </label>
+        <button type="submit">logIn</button>
     </div>
-    <button type="submit">logIn</button>
 </form>
