@@ -8,8 +8,9 @@ import { Actor } from '../Models/actor-module';
   styleUrls: ['./actors.component.css']
 })
 export class ActorsComponent implements OnInit {
-
-  actors: Actor[] = [];
+  searchTerm!: string;
+  actors!: Actor[]
+  term!: string;
 
   constructor(private actorsService: ActorsDataService) { }
   
@@ -23,5 +24,8 @@ export class ActorsComponent implements OnInit {
       error: err => console.log(err),
       complete: () => console.log("got actors", this.actors)
     });
+  }
+  search(value: string): void {
+    this.actors = this.actors.filter((val) => val.name.toLowerCase().includes(value));
   }
 }

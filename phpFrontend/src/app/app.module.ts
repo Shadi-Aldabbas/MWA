@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditActorComponent } from './edit-actor/edit-actor.component';
 import { EditMovieComponent } from './edit-movie/edit-movie.component';
 import { AddMovieComponent } from './add-movie/add-movie.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -27,13 +28,14 @@ import { AddMovieComponent } from './add-movie/add-movie.component';
     AddActorComponent,
     EditActorComponent,
     EditMovieComponent,
-    AddMovieComponent
+    AddMovieComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    Ng2SearchPipeModule,
     RouterModule.forRoot([
       {
       path: "",
