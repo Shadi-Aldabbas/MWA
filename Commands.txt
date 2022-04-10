@@ -1,3 +1,10 @@
+app.use("/api", function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.header('Access-Control-Allow-Headers', 'Origin, XRequested-With, Content-Type, Accept');
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  next();
+});
+
 update all => db.author.updateMany({},{$set: {"books": [
     {
                 "_id":ObjectId(1),
@@ -25,4 +32,3 @@ mongoexport -d actorDB -c actors --jsonArray --pretty
 mongoexport --db actorDB –-collection actors –out output/actorDB.json --jsonArray --pretty
 ng new phpFrontend --skip-git=true --skip-tests=true --defaults=true
 ng new first-app --skip-git=true --skip-tests=true –-directory public\first-app --defaults=true
-test
