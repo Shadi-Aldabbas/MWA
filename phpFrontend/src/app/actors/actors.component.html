@@ -1,0 +1,9 @@
+<ul>
+    <button routerLink="/actor/add">Add</button>
+
+  <li *ngFor="let actor of actors">
+    <a routerLink="/actor/{{actor._id}}">
+      {{actor.name}}
+    </a>
+  </li>
+</ul>
