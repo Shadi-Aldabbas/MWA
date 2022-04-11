@@ -1,3 +1,30 @@
+EXPORT - JSON
+mongoexport --db SchoolDB --collection students  --out output/students.json  //Export as Json
+mongoexport --db CookingDB --collection receipes  --out output/receipes.json --jsonArray --pretty //Export as JsonArry with readable pretty format
+mongoexport --db newDB --jsonArray output/games.json  //Import as Json
+
+IMPORT JSON
+mongoimport --db meanGames --jsonArray output/games.json  // without collection
+mongoimport --db meanGames --collection receipes --jsonArray output/games.json  //with collection
+----------------------------------------------------------------------------------------------------------------------------
+
+EXPORT - BSON
+mongodump --db CookingDB --gzip  //Export as gzip file
+mongodump --db CookingDB  //Export as BSON without gzip file
+
+IMPORT - BSON
+mongorestore --gzip --db meanGames --drop output\dump\meanGames  //Import as gzip BSON file
+mongorestore --db meanGames --drop dump\meanGames			//Import as BSON without gzip file
+
+
+npm init 
+npm i express dotenv mongoose
+npm install <something> --production // ONLY PRODUCTION
+npm install nodemon --save-dev // ONLY DEVELOPMENT
+create .env file
+
+ng new first-app --skip-git=true --skip-tests=true –-directory public\first-app –-defaults=true
+
 app.use("/api", function (req, res, next) {
   res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
   res.header('Access-Control-Allow-Headers', 'Origin, XRequested-With, Content-Type, Accept');
