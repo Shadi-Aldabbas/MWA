@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Actor, Movie } from './Models/actor-module';
+import { environment } from 'src/environments/environment';
+import {  Movie } from './Models/actor-module';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class MoviesDataService {
 
   constructor(private http: HttpClient) { }
   // private readonly baseUrl: string = 'http://localhost:3000/api/actors/:actorId/movies/:movieId';
-  private readonly baseUrl: string = 'http://localhost:3000/api/';
+  private readonly baseUrl: string = environment.REST_API_BASE;
   public getMovies(actorId:string): Observable<Movie[]> {
     return this.http.get<Movie[]>(`${this.baseUrl}actors/${actorId}/movies`);
   }
