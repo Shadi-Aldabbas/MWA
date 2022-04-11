@@ -1,0 +1,9 @@
+<p>{{grade.student_id}}</p>
+<p>{{grade.class_id}}</p>
+<ul>
+    <li *ngFor="let i of grade.scores">
+        <p>{{i.score}}</p>
+
+    </li>
+</ul>
+<button (click)="delete(grade._id)"></button>

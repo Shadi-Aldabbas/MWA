@@ -21,7 +21,7 @@ npm init
 npm i express dotenv mongoose
 npm install <something> --production // ONLY PRODUCTION
 npm install nodemon --save-dev // ONLY DEVELOPMENT
-create .env file
+create .env fileht
 
 ng new first-app --skip-git=true --skip-tests=true –-directory public\first-app –-defaults=true
 
