@@ -1,0 +1,18 @@
+<p>search Page</p>
+<form #form="ngForm" (ngSubmit)="SearchPlz(form)">
+
+    lat:
+    <input name="lat" [(ngModel)]="geoForm.lat"><br />
+    lon
+    <input name="lon" [(ngModel)]="geoForm.lon"><br />
+    dist
+    <input name="dist" [(ngModel)]="geoForm.dist"><br />
+    <button type="submit">GO</button>
+</form>
+<ul>
+    <li *ngFor="let i of ships">
+        <a>
+            {{i.watlev}}
+        </a>
+    </li>
+</ul>

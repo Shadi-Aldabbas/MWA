@@ -1,0 +1,15 @@
+The list of Ships are:<br/>
+select how many you want to see
+<select>
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="50">50</option>
+</select>
+<ul>
+    <li *ngFor="let ship of ships">
+        <a routerLink="{{ship._id}}">{{ship.depth}} - {{ship.coordinates}}</a>
+    </li>
+</ul>
+
+<button (click)="prevFive()">perv 5</button>
+<button (click)="nextFive()">next 5</button>
